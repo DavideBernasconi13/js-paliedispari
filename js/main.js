@@ -1,15 +1,25 @@
-// Palidroma
+//prendo i due bottoni e faccio eseguire la funzione corrispondente
+let btnPalindroma = document.querySelector('.btn');
+btnPalindroma.addEventListener('click', function () {
+    palindroma();
+})
+
+// bottone pari
+let btnPari = document.getElementById('pari');
+btnPari.addEventListener('click', function () {
+
+})
+
+// Consegna palidroma
 // Chiedere all’utente di inserire una parola
 // Creare una funzione per capire se la parola inserita è palindroma
 
-//creare variabile con parola inserita dall'utente
-let userWord = prompt('Inserisci una parola');
-console.log(userWord);
-let pali = false;
-
-
 function palindroma() {
-    console.log("crash");
+    //creare variabile con parola inserita dall'utente
+    let userWord = prompt('Inserisci una parola');
+    console.log(userWord);
+    let pali = false;
+
     //creare array composto dalle lettere della parola inserita
     let splitString = userWord.split("");
     console.log(splitString);
@@ -20,17 +30,15 @@ function palindroma() {
     if (userWord === newWord) {
         pali = true;
     }
+
+    // variabile flag confrontata
     if (pali) {
-        document.write('La parola inserita è palindroma');
+        document.write(`La parola inserita: ${userWord} è palindroma`);
     } else {
-        document.write('La parola inserita non è palindroma');
+        document.write(`La parola inserita: ${userWord} non è palindroma`);
     }
 }
 
-
-
-//passare alla funzione come parametro la parola dell'utente
-palindroma(userWord);
 
 // Pari e Dispari
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
