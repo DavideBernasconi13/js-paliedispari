@@ -50,30 +50,32 @@ function evenOdd() {
     console.log("crash");
     let result = document.querySelector('.result');
     let userChoice = prompt('Scegli pari o dispari');
+    let userNumber = 0;
     // controllo sull'input utente
     if (userChoice == 'pari' || userChoice == 'dispari') {
-        let userNumber = parseInt(prompt(`Inserisci un numero ${userChoice}`));
+        userNumber = parseInt(prompt(`Inserisci un numero ${userChoice}`));
         console.log(typeof userNumber);
     } else {
         console.log("crash");
         alert('Valore non consentito: inserisci solo pari o dispari');
-
     }
+    console.log(userNumber);
 
     function generateRandomNumber() {
         let pcNumber = parseInt(Math.random() * 5) + 1;
-        retun(pcNumber);
+        return pcNumber;
     }
 
-    generateRandomNumber();
-    result.innerHTML = `Il numero random del pc è: ${pcNumber}`;
-    console.log(pcNumber);
-    let somma = pcNumber + userNumber;
+    let numberGenerated = generateRandomNumber();
+    result.innerHTML = `Il numero random del pc è: ${numberGenerated}`;
+    let somma = numberGenerated + userNumber;
     console.log('la somma dei due numeri è:', somma);
 
-
-
-
-
+    //Stampa il risultato
+    if (userChoice = 'pari' && somma % 2 === 0) {
+        console.log('hai vinto!');
+    } else {
+        console.log('Hai perso');
+    }
 
 }
